@@ -31,10 +31,10 @@
         return 'vxth-' + Math.random().toString(36).substr(2, 9);
     }
 
-    function adv(num = 10) {
+    function adv(num = 15) {
         var $imageContainer = $('#image1');
         console.log($imageContainer.children().length);
-        if ($imageContainer.children().length > 10) {
+        if ($imageContainer.children().length > num) {
             $imageContainer.children().remove();
         }
         // 创建一个img元素
