@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <meta name="referrer" content="no-referrer">
+    <div id="image1" style="width: 100px;height: 100px;">
+        <div>1</div>
+    </div>
+</head>
+<body>
+<script>
+    // 假设你想将图片添加到一个ID为'image-container'的元素中
+    function get_suiji() {
+        return 'vxth-' + Math.random().toString(36).substr(2, 9);
+    }
+
+    function adv(num = 10) {
+        var $imageContainer = $('#image1');
+        console.log($imageContainer.children().length);
+        if ($imageContainer.children().length > 10) {
+            $imageContainer.children().remove();
+        }
+        // 创建一个img元素
+        for (var i = 0; i < num; i++) {
+            var $img = $('<img>').attr({
+                src: `https://www.pintuanbai.cn/wp-content/uploads/2024/09/01075410906.png?t=${new Date().getTime()}_${get_suiji()}_${get_suiji()}`, // 图片的路径
+                alt: 'Alternative text', // 图片的替代文本
+                title: 'Image title' // 图片的标题
+            });
+            // 将img元素添加到容器中
+            $imageContainer.append($img);
+        }
+
+
+    }
+
+    function adv1(num) {
+        var $imageContainer = $('#image1');
+        console.log($imageContainer.children().length);
+        if ($imageContainer.children().length < 3) {
+            // 创建一个img元素
+            var $img = $(`<div>${num}</div>`)
+
+            // 将img元素添加到容器中
+            $imageContainer.append($img);
+        }
+
+
+    }
+
+    // 设置一个1000毫秒后执行的定时器
+    // 设置一个每2000毫秒执行一次的定时器
+    setInterval(adv, 10000);
+    var $imageContainer = $('#image1');
+</script>
+</body>
+</html>
